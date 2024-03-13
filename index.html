@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>End Movies</title>
+    <style>
+        .movie-g {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Выберите жанр фильма:</h1>
+    <select id="Janry">
+        <option value="all">Все жанры</option>
+        <option value="comedy">Комедия</option>
+        <option value="cartoons">Мультфильмы</option>
+        <option value="fantastic">Фантастика</option>
+        <option value="action">Боевики</option>
+    </select>
+    <button onclick="fM()">Выбрать</button>
+    <div id="movies">
+        <div class="movie-g" id="comedy">
+            <h1>Холоп-2</h1>
+            <img src="img/Холоп-2.jpeg" alt="Холоп-2" width="360px" height="480px">
+        </div>
+        <div class="movie-g" id="comedy">
+            <h1>Дети шпионов</h1>
+            <img src="img/дети шпионов.jpg" alt="дети шпионов" width="360px" height="480px">
+        </div>
+
+
+        <div class="movie-g" id="fantastic">
+            <h1>Мстители финал</h1>
+            <img src="img/The_Avengers_Endgame_Poster.jpg" alt="The_Avengers_Endgame_Poster" width="360px" height="480px">
+        </div>
+        
+        <div class="movie-g" id="action">
+            <h1>Мёртвая зона</h1>
+            <img src="img/мёртвая зона.jpg" alt="мёртвая зона" width="360px" height="480px">
+        </div>
+
+        <div class="movie-g" id="cartoons">
+            <h1>Человек паук через вселенные</h1>
+            <img src="img/через вселенные.jpg" alt="через вселенные" width="360px" height="480px">
+        </div>
+        <div class="movie-g" id="cartoons">
+            <h1>Человек паук паутина вселенных</h1>
+            <img src="img/паутина вселенных.jpg" alt="паутина вселенные" width="360px" height="480px">
+        </div>
+
+    </div>
+
+    <script>
+        function fM() {
+            var gen = document.getElementById("Janry").value
+            var movies = document.getElementsByClassName('movie-g');
+            for (var i = 0; i < movies.length; i++) {
+                if (gen === 'all' || movies[i].id === gen) {
+                    movies[i].style.display = 'block';
+                } 
+                else {
+                    movies[i].style.display = 'none';
+                }
+            }
+        }
+        fM();
+    </script>
+</body>
+</html>
+
+
